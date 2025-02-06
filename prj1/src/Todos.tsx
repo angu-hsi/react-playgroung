@@ -16,7 +16,7 @@ export function Todos() {
   const handleAddTodo = () => {
     if (newTodo.trim() !== "") {
       dispatch(addTodo(newTodo));
-      setNewTodo(""); // Pulisce il campo dopo l'invio
+      setNewTodo("");
     }
   };
 
