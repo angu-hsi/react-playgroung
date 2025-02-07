@@ -5,14 +5,12 @@ import axios from "axios";
 
 export interface TodosState {
   todos: Todo[];
-  loading: boolean;
   error: string | null;
   currentTodo: Todo | null;
 }
 
 const initialState: TodosState = {
   todos: [],
-  loading: false,
   error: null,
   currentTodo: null,
 };
@@ -44,15 +42,12 @@ export const todoSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state) => {
-        state.loading = true;
         state.error = null;
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        state.loading = false;
         state.todos = action.payload;
       })
       .addCase(fetchTodos.rejected, (state, action) => {
-        state.loading = false;
         state.error = action.error.message || "Errore sconosciuto";
       })
       .addCase(addTodo.fulfilled, (state, action) => {
