@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/pdf": {
-        target: "http://localhost",
+        target: "http://localhost:16904",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/pdf/, ""),
       },
