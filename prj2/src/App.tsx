@@ -4,7 +4,7 @@ import PDFViewer from "./PDFViewer";
 function App() {
   const [showPdf, setShowPdf] = useState(false);
   // const pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
-  const pdfUrl = "/api/pdf/pdf/specifiche.pdf";
+  const pdfUrl = "/api/pdf/pdf/specifiche-short.pdf";
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
